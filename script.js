@@ -1,6 +1,9 @@
 let canvas = document.getElementById("myCanvas")
 let button = document.getElementById("clear")
+
 var cKeyPressed;//hold a true or false value
+var rKeyPressed; 
+
 canvas.width = 400;
 canvas.height = 600;
 
@@ -24,7 +27,17 @@ function drawShapes(){
   if(cKeyPressed){
   drawCircle()
   }
+  if(rKeyPressed){
+  drawRectangle()
+  }
 
+}
+
+function drawRectangle(){
+  console.log("drawRectangle")
+  context.rect(10, 10, 150, 100);
+  //context.fillStyle = "red";
+  //context.fill();
 }
 
 function drawCircle(){
@@ -37,12 +50,6 @@ var randomYPosition = getRandomInt(0,canvas.height);context.beginPath();
 context.arc(randomXPosition, randomYPosition, circleSize, 0, Math.PI*2);
 context.fillStyle = color; //fill the circle with our random color!
 context.fill();
-//get a random circle size
-
-//choose a random x and y pos
-
-//fill circle with random color
-
 }
 
 function getRandomInt(min, max) {
@@ -62,21 +69,27 @@ function getRandomColor(alpha){
 document.addEventListener("keydown",keyDownHandler,false);
 document.addEventListener("keyup",keyUpHandler,false);
 
-
-
 function keyDownHandler(e){
   if(e.keyCode == 67){//letter c
     cKeyPressed = true;
   }
-}
-function keyUpHandler(e){
-  if(e.keyCode == 67){//letter c
-    cKeyPressed = false;
+  if(e.keyCode == 82){//letter c
+    rKeyPressed = true;
   }
 }
 
 
+function keyUpHandler(e){
+  if(e.keyCode == 67){//letter c
+    cKeyPressed = false;
+  }
+  if(e.keyCode == 82){//letter c
+    rKeyPressed = false;
+  }
+  
+}
 
+//setting up the key and the boolean value
 
 
 
