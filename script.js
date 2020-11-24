@@ -34,8 +34,15 @@ function drawShapes(){
 }
 
 function drawRectangle(){
+
+
+
+  
   console.log("drawRectangle")
+  context.lineWidth = 10
+  context.strokeStyle = "red"
   context.rect(10, 10, 150, 100);
+  context.stroke()
   //context.fillStyle = "red";
   //context.fill();
 }
@@ -48,7 +55,8 @@ var circleSize = getRandomInt(5,20);
 var randomXPosition = getRandomInt(0,canvas.width);
 var randomYPosition = getRandomInt(0,canvas.height);context.beginPath();
 context.arc(randomXPosition, randomYPosition, circleSize, 0, Math.PI*2);
-context.fillStyle = color; //fill the circle with our random color!
+context.fillStyle = color;
+ //fill the circle with our random color!
 context.fill();
 }
 
