@@ -34,15 +34,22 @@ function drawShapes(){
 }
 
 function drawRectangle(){
+//get a rnadom color
+var color = getRandomColor(1.0);
+var circleSize = getRandomInt(5,20);
+
+var randomXPosition = getRandomInt(0,canvas.width);
+var randomYPosition = getRandomInt(0,canvas.height);context.beginPath();
 
 
 
-  
-  console.log("drawRectangle")
+  //console.log("drawRectangle")
   context.lineWidth = 10
   context.strokeStyle = "red"
-  context.rect(10, 10, 150, 100);
+  context.fillStyle = color;
+  context.rect(randomXPosition, randomYPosition, getRandomInt(15,20), getRandomInt(15,20));
   context.stroke()
+  context.fill()
   //context.fillStyle = "red";
   //context.fill();
 }
@@ -81,7 +88,7 @@ function keyDownHandler(e){
   if(e.keyCode == 67){//letter c
     cKeyPressed = true;
   }
-  if(e.keyCode == 82){//letter c
+  if(e.keyCode == 83){//letter s
     rKeyPressed = true;
   }
 }
@@ -91,7 +98,7 @@ function keyUpHandler(e){
   if(e.keyCode == 67){//letter c
     cKeyPressed = false;
   }
-  if(e.keyCode == 82){//letter c
+  if(e.keyCode == 83){//letter s
     rKeyPressed = false;
   }
   
