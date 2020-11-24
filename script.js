@@ -12,7 +12,6 @@ context.moveTo(0,0)
 context.lineTo(200,250)
 context.stroke()
 context.closePath()
-
 */
 
 button.onclick = function (){
